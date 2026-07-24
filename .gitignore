@@ -39,3 +39,14 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Test/build output
+coverage/
+
+# Local tool configuration (optional)
+.claude/
