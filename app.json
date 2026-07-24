@@ -1,16 +1,19 @@
 {
   "expo": {
-    "name": "smart-recipe-planner",
+    "name": "Smart Recipe Planner",
     "slug": "smart-recipe-planner",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#F5F6F8"
     },
     "ios": {
       "supportsTablet": true
@@ -18,12 +21,30 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#F5F6F8"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Smart Recipe Planner uses your photos to identify ingredients for recipe ideas.",
+          "cameraPermission": "Smart Recipe Planner uses your camera to photograph ingredients for recipe ideas.",
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0958c67b-d015-489f-84d6-c0e6c9648f71"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/0958c67b-d015-489f-84d6-c0e6c9648f71"
     }
   }
 }
