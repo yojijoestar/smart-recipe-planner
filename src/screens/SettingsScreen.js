@@ -5,12 +5,12 @@ import {
   StyleSheet,
   TextInput,
   Pressable,
-  Alert,
   ScrollView,
   Linking,
 } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 import { getApiKey, setApiKey, clearApiKey } from '../storage/settings';
+import { showAlert } from '../utils/alert';
 import { colors, radius, space } from '../theme';
 
 export default function SettingsScreen({ navigation }) {
@@ -27,7 +27,7 @@ export default function SettingsScreen({ navigation }) {
   const save = async () => {
     const trimmed = value.trim();
     if (trimmed && !trimmed.startsWith('sk-ant-')) {
-      Alert.alert('That doesn’t look right', 'Anthropic keys start with "sk-ant-". Save anyway?', [
+      showAlert('That doesn’t look right', 'Anthropic keys start with "sk-ant-". Save anyway?', [
         { text: 'Cancel', style: 'cancel' },
         { text: 'Save anyway', onPress: () => commit(trimmed) },
       ]);
@@ -39,7 +39,7 @@ export default function SettingsScreen({ navigation }) {
   const commit = async (trimmed) => {
     await setApiKey(trimmed);
     setSaved(trimmed);
-    Alert.alert('Saved', 'Your API key is stored on this device.', [
+    showAlert('Saved', 'Your API key is stored on this device.', [
       { text: 'Done', onPress: () => navigation.goBack() },
     ]);
   };

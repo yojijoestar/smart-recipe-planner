@@ -13,20 +13,21 @@ Smart Recipe Planner looks at what's really in your kitchen and turns it into co
 
 ## Try it
 
-**On your phone (recommended):**
+**Try the build in Expo Go (recommended):**
 1. Install **Expo Go** from the iOS App Store.
-2. Open this link on your phone: `exp://u.expo.dev/0958c67b-d015-489f-84d6-c0e6c9648f71?runtime-version=1.0.0&channel-name=production`
-3. Tap **Settings** → paste an Anthropic API key ([get a free one here](https://console.anthropic.com/settings/keys)) → **Save**. The key stays on your device and is only ever sent to `api.anthropic.com`.
-4. Take a photo of some ingredients and go.
-
-**Run from source:**
+2. Run those commands on your computer's terminal to start the server:
 ```bash
-git clone <repo-url>
+git clone https://github.com/yojijoestar/smart-recipe-planner.git
 cd smart-recipe-planner
 npm install
 npx expo start
 ```
-Then scan the QR code with your iPhone's Camera app (phone and computer must be on the same Wi-Fi), or open the printed `exp://` URL directly in Expo Go.
+3. Scan the QR code with your iPhone's Camera app (phone and computer must be on the same Wi-Fi), or open the printed `exp://` URL directly in Expo Go.
+4. Tap **Settings** → paste an Anthropic API key ([get a free one here](https://console.anthropic.com/settings/keys)) → **Save**. The key stays on your device and is only ever sent to `api.anthropic.com`.
+5. Take a photo of some ingredients and go.
+
+**Try the web app:**
+open link https://smart-recipe-planner.expo.app/ in your mobile browser and try the app!
 
 ## Requirements
 

@@ -7,7 +7,6 @@ import {
   Pressable,
   Image,
   ActivityIndicator,
-  Alert,
   TextInput,
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -18,6 +17,7 @@ import ScanningPhoto from '../components/ScanningPhoto';
 import { detectIngredients, generateRecipes } from '../api/claude';
 import { prefetchDetails, clearDetailCache } from '../api/detailCache';
 import { getApiKey } from '../storage/settings';
+import { showAlert } from '../utils/alert';
 import { colors, radius, space, withAlpha } from '../theme';
 
 export default function HomeScreen({ navigation }) {
@@ -91,7 +91,7 @@ export default function HomeScreen({ navigation }) {
     const key = await getApiKey();
     setApiKeyState(key);
     if (!key) {
-      Alert.alert(
+      showAlert(
         'API key needed',
         'Add your Anthropic API key in Settings so the app can read your photo and build recipes.',
         [
@@ -112,7 +112,7 @@ export default function HomeScreen({ navigation }) {
       ? await ImagePicker.requestCameraPermissionsAsync()
       : await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!perm.granted) {
-      Alert.alert(
+      showAlert(
         'Permission needed',
         fromCamera
           ? 'Please allow camera access to continue.'
